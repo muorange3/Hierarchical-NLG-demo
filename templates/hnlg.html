@@ -104,15 +104,6 @@
     .generated-word {
       line-height: 30px;
     }
-    #resultSent {
-      background-color: #F9755A;
-      border-radius: 10px;
-      border: white 1px solid;
-      padding: 10px;
-      color: white;
-      /*font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;*/
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
@@ -178,18 +169,17 @@
       <div class="row">
         <h3>Generated Sentences</h3>
         <hr>
-        <!-- <h3>Noun Layer</h3> -->
         {% for list in resultList %}
         <h4>
         {% for j in list %}
           {% if j[2] == 'n' %}
-            <span class="label label-success generated-word">{{j[1]}}&nbsp;({{j[2]}})</span>&nbsp;
-          {% if j[2] == 'v' %}
-            <span class="label label-success generated-word">{{j[1]}}&nbsp;({{j[2]}})</span>&nbsp;
-          {% if j[2] == 'a' %}
-            <span class="label label-success generated-word">{{j[1]}}&nbsp;({{j[2]}})</span>&nbsp;
-          {% else %}
-            <span class="label label-default generated-word">{{j[1]}}&nbsp;({{j[2]}})</span>&nbsp;
+            <span class="label label-success generated-word">{{j[1]}}</span>&nbsp;
+          {% elif j[2] == 'v' %}
+            <span class="label label-primary generated-word">{{j[1]}}</span>&nbsp;
+          {% elif j[2] == 'a' %}
+            <span class="label label-info generated-word">{{j[1]}}</span>&nbsp;
+          {% elif j[2] == 'other' %}
+            <span class="label label-warning generated-word">{{j[1]}}</span>&nbsp;
           {% endif %}   
         {% endfor %}
         </h4>
@@ -197,8 +187,8 @@
         {% endfor %}
       </div>
       <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-          <h4 id="resultSent" align="center">{{resultSent}}</h4>
+        <div class="col-md-offset-1 col-md-10" align="center">
+          <h3><span class="label label-danger">{{resultSent}}</span></h3>
         </div>
       </div>
     </div>
