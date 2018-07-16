@@ -18,17 +18,11 @@ def result():
         print(result)
 
     resultList = [      # generated words
-        [['new','All Bar One','N.'],['new','place','N.'],['new','it','N.'],['new','Midsummer House','N.']],
-        [['old','All Bar One','N.'],['new','is','V.'],['new','priced','V.'],['old','place','N.'],['old','it','N.'],['new','is','V.'],['new','called','V.'],['old','Midsummer House','N.']],
-        [['old','All Bar One','N.'],['old','is','V.'],['new','moderately','Adv.'],['old','priced','V.'],['new','Italian','Adj.'],['old','place','N.'],['old','it','N.'],['old','is','V.'],['old','called','V.'],['old','Midsummer House','N.']],
-        [['new','Near','Other.'],['old','All Bar One','N.'],['old','is','V.'],['new','a','Other.'],['old','moderately','Adv.'],['old','priced','V.'],['old','Italian','Adj.'],['old','place','N.'],['old','it','N.'],['old','is','V.'],['old','called','V.'],['old','Midsummer House','N.']]
+        [['new','All Bar One','n'],['new','place','n'],['new','it','n'],['new','Midsummer House','n']],
+        [['old','All Bar One','n'],['new','is','v'],['new','priced','v'],['old','place','n'],['old','it','n'],['new','is','v'],['new','called','v'],['old','Midsummer House','n']],
+        [['old','All Bar One','n'],['old','is','v'],['new','moderately','a'],['old','priced','v'],['new','Italian','a'],['old','place','n'],['old','it','n'],['old','is','v'],['old','called','v'],['old','Midsummer House','n']],
+        [['new','Near','Other.'],['old','All Bar One','n'],['old','is','v'],['new','a','Other.'],['old','moderately','a'],['old','priced','v'],['old','Italian','a'],['old','place','n'],['old','it','n'],['old','is','v'],['old','called','v'],['old','Midsummer House','n']]
     ]
-    # resultList = [      # generated words
-    #     [['new','All Bar One','N.'],['new','place','N.'],['new','it','N.'],['new','Midsummer House','N.']],
-    #     [['old','All Bar One'],['new','is'],['new','priced'],['old','place'],['old','it'],['new','is'],['new','called'],['old','Midsummer House']],
-    #     [['old','All Bar One'],['old','is'],['new','moderately'],['old','priced'],['new','Italian'],['old','place'],['old','it'],['old','is'],['old','called'],['old','Midsummer House']],
-    #     [['new','Near'],['old','All Bar One'],['old','is'],['new','a'],['old','moderately'],['old','priced'],['old','Italian'],['old','place'],['old','it'],['old','is'],['old','called'],['old','Midsummer House']]
-    # ]
     resultSent = 'Near All Bar One is a moderately priced Italian place it is called Midsummer House'
     return render_template('hnlg.html', resultList=resultList, resultSent=resultSent)
 
