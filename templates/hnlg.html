@@ -10,7 +10,7 @@
 
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {height: 100vh}
+    .row.content {height: 100%}
     
     /* Set gray background color and 100% height */
     .sidenav {
@@ -125,39 +125,182 @@
       <div class="input-group">
         <form action="/result" method="POST">
           <div class="switch-field">
-            <div class="switch-title"><b>Name</b></div>
-            <input type="radio" id="switch_left" name="switch_name" value="yes" checked/>
-            <label for="switch_left">A</label>
-            <input type="radio" id="switch_right" name="switch_name" value="no" />
-            <label for="switch_right">B</label>
+            <div class="switch-title"><b>Area</b></div>
+            <input type="radio" id="switch_area_1" name="switch_area" value="city_centre" checked/>
+            <label for="switch_area_1">City Centre</label>
+            <input type="radio" id="switch_area_2" name="switch_area" value="riverside" />
+            <label for="switch_area_2">Riverside</label>
+          </div>
+          <div class="switch-field">
+            <div class="switch-title"><b>Customer Rating</b></div>
+            <input type="radio" id="switch_customer_1" name="switch_rating" value="one" checked/>
+            <label for="switch_customer_1">1 out of 5</label>
+            <input type="radio" id="switch_customer_2" name="switch_rating" value="three" />
+            <label for="switch_customer_2">3 out of 5</label>
+            <input type="radio" id="switch_customer_3" name="switch_rating" value="five" />
+            <label for="switch_customer_3">5 out of 5</label>
+            <input type="radio" id="switch_customer_4" name="switch_rating" value="average" />
+            <label for="switch_customer_4">Average</label>
+            <input type="radio" id="switch_customer_5" name="switch_rating" value="high" />
+            <label for="switch_customer_5">High</label>
+            <input type="radio" id="switch_customer_6" name="switch_rating" value="low" />
+            <label for="switch_customer_6">Low</label>
+          </div>
+          <div class="switch-field">
+            <div class="switch-title"><b>Eating Type</b></div>
+            <input type="radio" id="switch_eating_1" name="switch_eating_type" value="coffee" checked/>
+            <label for="switch_eating_1">Coffee</label>
+            <input type="radio" id="switch_eating_2" name="switch_eating_type" value="pub" />
+            <label for="switch_eating_2">Pub</label>
+            <input type="radio" id="switch_eating_3" name="switch_eating_type" value="restaurant" />
+            <label for="switch_eating_3">Restaurant</label>
+          </div>
+          <div class="switch-field">
+            <div class="switch-title"><b>Family Friendly</b></div>
+            <input type="radio" id="switch_family_1" name="switch_family" value="no" checked/>
+            <label for="switch_family_1">No</label>
+            <input type="radio" id="switch_family_2" name="switch_family" value="yes" />
+            <label for="switch_family_2">Yes</label>
           </div>
           <div class="switch-field">
             <div class="switch-title"><b>Food</b></div>
-            <input type="radio" id="switch_food_left" name="switch_food" value="yes" checked/>
-            <label for="switch_food_left">Italian</label>
-            <input type="radio" id="switch_food_center" name="switch_food" value="maybe" />
-            <label for="switch_food_center">American</label>
-            <input type="radio" id="switch_food_right" name="switch_food" value="no" />
-            <label for="switch_food_right">Chinese</label>
+            <input type="radio" id="switch_food_1" name="switch_food" value="chinese" checked />
+            <label for="switch_food_1">Chinese</label>
+            <input type="radio" id="switch_food_2" name="switch_food" value="english" />
+            <label for="switch_food_2">English</label>
+            <input type="radio" id="switch_food_3" name="switch_food" value="fast_food" />
+            <label for="switch_food_3">Fast Food</label>
+            <input type="radio" id="switch_food_4" name="switch_food" value="french"/>
+            <label for="switch_food_4">French</label>
+            <input type="radio" id="switch_food_5" name="switch_food" value="indian"/>
+            <label for="switch_food_5">Indian</label>
+            <input type="radio" id="switch_food_6" name="switch_food" value="italian"/>
+            <label for="switch_food_6">Italian</label>
+            <input type="radio" id="switch_food_7" name="switch_food" value="japanese" />
+            <label for="switch_food_7">Japanese</label>
+          </div>
+          <div class="switch-field">
+            <div class="switch-title"><b>Name</b></div>
+            <input type="radio" id="switch_name_1" name="switch_name" value="alimentum" checked/>
+            <label for="switch_name_1">Alimentum</label>
+            <input type="radio" id="switch_name_2" name="switch_name" value="aromi" />
+            <label for="switch_name_2">Aromi</label>
+            <input type="radio" id="switch_name_3" name="switch_name" value="bibimbap_house" />
+            <label for="switch_name_3">Bibimbap House</label>
+            <input type="radio" id="switch_name_4" name="switch_name" value="blues_pice" />
+            <label for="switch_name_4">Blue Spice</label>
+            <input type="radio" id="switch_name_5" name="switch_name" value="browns_cambridge" />
+            <label for="switch_name_5">Browns Cambridge</label>
+            <input type="radio" id="switch_name_6" name="switch_name" value="clowns" />
+            <label for="switch_name_6">Clowns</label>
+            <input type="radio" id="switch_name_7" name="switch_name" value="cocum" />
+            <label for="switch_name_7">Cocum</label>
+            <input type="radio" id="switch_name_8" name="switch_name" value="cotto" />
+            <label for="switch_name_8">Cotto</label>
+            <input type="radio" id="switch_name_9" name="switch_name" value="fitzbillies" />
+            <label for="switch_name_9">Fitzbillies</label>
+            <input type="radio" id="switch_name_10" name="switch_name" value="giraffe" />
+            <label for="switch_name_10">Giraffe</label>
+            <input type="radio" id="switch_name_11" name="switch_name" value="green_man" />
+            <label for="switch_name_11">Green Man</label>
+            <input type="radio" id="switch_name_12" name="switch_name" value="loch_fyne" />
+            <label for="switch_name_12">Loch Fyne</label>
+            <input type="radio" id="switch_name_13" name="switch_name" value="midsummer_house" />
+            <label for="switch_name_13">Midsummer House</label>
+            <input type="radio" id="switch_name_14" name="switch_name" value="strada" />
+            <label for="switch_name_14">Strada</label>
+            <input type="radio" id="switch_name_15" name="switch_name" value="taste_of_cambridge" />
+            <label for="switch_name_15">Taste of Cambridge</label>
+            <input type="radio" id="switch_name_16" name="switch_name" value="the_cambridge_blue" />
+            <label for="switch_name_16">The Cambridge Blue</label>
+            <input type="radio" id="switch_name_17" name="switch_name" value="the_cricketers" />
+            <label for="switch_name_17">The Cricketers</label>
+            <input type="radio" id="switch_name_18" name="switch_name" value="the_dumpling_tree" />
+            <label for="switch_name_18">The Dumpling Tree</label>
+            <input type="radio" id="switch_name_19" name="switch_name" value="the_eagle" />
+            <label for="switch_name_19">The Eagle</label>
+            <input type="radio" id="switch_name_20" name="switch_name" value="the_golden_curry" />
+            <label for="switch_name_20">The Golden Curry</label>
+            <input type="radio" id="switch_name_21" name="switch_name" value="the_golden_palace" />
+            <label for="switch_name_21">The Golden Palace</label>
+            <input type="radio" id="switch_name_22" name="switch_name" value="the_mill" />
+            <label for="switch_name_22">The Mill</label>
+            <input type="radio" id="switch_name_23" name="switch_name" value="the_olive_grove" />
+            <label for="switch_name_23">The Olive Grove</label>
+            <input type="radio" id="switch_name_24" name="switch_name" value="the_phoenix" />
+            <label for="switch_name_24">The Phoenix</label>
+            <input type="radio" id="switch_name_25" name="switch_name" value="the_plough" />
+            <label for="switch_name_25">The Plough</label>
+            <input type="radio" id="switch_name_26" name="switch_name" value="the_punter" />
+            <label for="switch_name_26">The Punter</label>
+            <input type="radio" id="switch_name_27" name="switch_name" value="the_rice_boat" />
+            <label for="switch_name_27">The Rice Boat</label>
+            <input type="radio" id="switch_name_28" name="switch_name" value="the_twenty_two" />
+            <label for="switch_name_28">The Twenty Two</label>
+            <input type="radio" id="switch_name_29" name="switch_name" value="the_vaults" />
+            <label for="switch_name_29">The Vaults</label>
+            <input type="radio" id="switch_name_30" name="switch_name" value="the_waterman" />
+            <label for="switch_name_30">The Waterman</label>
+            <input type="radio" id="switch_name_31" name="switch_name" value="the_wrestlers" />
+            <label for="switch_name_31">The Wrestlers</label>
+            <input type="radio" id="switch_name_32" name="switch_name" value="travellers_rest_beefeater" />
+            <label for="switch_name_32">Travellers Rest Beefeater</label>
+            <input type="radio" id="switch_name_33" name="switch_name" value="wildwood" />
+            <label for="switch_name_33">Wildwood</label>
+            <input type="radio" id="switch_name_34" name="switch_name" value="zizzi" />
+            <label for="switch_name_34">Zizzi</label>
+          </div>
+          <div class="switch-field">
+            <div class="switch-title"><b>Near</b></div>
+            <input type="radio" id="switch_near_1" name="switch_near" value="all_bar_one" checked/>
+            <label for="switch_near_1">All Bar One</label>
+            <input type="radio" id="switch_near_2" name="switch_near" value="avalon" />
+            <label for="switch_near_2">Avalon</label>
+            <input type="radio" id="switch_near_3" name="switch_near" value="burger_king" />
+            <label for="switch_near_3">Burger King</label>
+            <input type="radio" id="switch_near_4" name="switch_near" value="cafe_adriatic" />
+            <label for="switch_near_4">Café Adriatic</label>
+            <input type="radio" id="switch_near_5" name="switch_near" value="cafe_brazil" />
+            <label for="switch_near_5">Café Brazil</label>
+            <input type="radio" id="switch_near_6" name="switch_near" value="cafe_rouge" />
+            <label for="switch_near_6">Café Rouge</label>
+            <input type="radio" id="switch_near_7" name="switch_near" value="cafe_sicilia" />
+            <label for="switch_near_7">Café Sicilia</label>
+            <input type="radio" id="switch_near_8" name="switch_near" value="clare_hall" />
+            <label for="switch_near_8">Clare Hall</label>
+            <input type="radio" id="switch_near_9" name="switch_near" value="crowne_plaza_hotel" />
+            <label for="switch_near_9">Crowne Plaza Hotel</label>
+            <input type="radio" id="switch_near_10" name="switch_near" value="express_by_holiday_inn" />
+            <label for="switch_near_10">Express by Holiday Inn</label>
+            <input type="radio" id="switch_near_11" name="switch_near" value="rainbow_vegeterian_cafe" />
+            <label for="switch_near_11">Rainbow Vegetarian Café</label>
+            <input type="radio" id="switch_near_12" name="switch_near" value="raja_indian_cuisine" />
+            <label for="switch_near_12">Raja Indian Cuisine</label>
+            <input type="radio" id="switch_near_13" name="switch_near" value="ranch" />
+            <label for="switch_near_13">Ranch</label>
+            <input type="radio" id="switch_near_14" name="switch_near" value="the_bakers" />
+            <label for="switch_near_14">The Bakers</label>
+            <input type="radio" id="switch_near_15" name="switch_near" value="the_portland_arms" />
+            <label for="switch_near_15">The Portland Arms</label>
+            <input type="radio" id="switch_near_16" name="switch_near" value="the_rice_boat" />
+            <label for="switch_near_16">The Rice Boat</label>
+            <input type="radio" id="switch_near_17" name="switch_near" value="the_six_bells" />
+            <label for="switch_near_17">The Six Bells</label>
+            <input type="radio" id="switch_near_18" name="switch_near" value="the_sorrento" />
+            <label for="switch_near_18">The Sorrento</label>
+            <input type="radio" id="switch_near_19" name="switch_near" value="yippee_noodle_bar" />
+            <label for="switch_near_19">Yippee Noodle Bar</label>
           </div>
           <div class="switch-field">
             <div class="switch-title"><b>Price Range</b></div>
             <input type="radio" id="switch_pricerange_left" name="switch_pricerange" value="yes" checked/>
             <label for="switch_pricerange_left">High</label>
-            <input type="radio" id="switch_pricerange_center" name="switch_pricerange" value="maybe" />
+            <input type="radio" id="switch_pricerange_center" name="switch_pricerange" value="no" />
             <label for="switch_pricerange_center">Moderate</label>
             <input type="radio" id="switch_pricerange_right" name="switch_pricerange" value="no" />
             <label for="switch_pricerange_right">Cheap</label>
           </div>
-          <div class="switch-field">
-            <div class="switch-title"><b>Near</b></div>
-            <input type="radio" id="switch_near_left" name="switch_near" value="yes" checked/>
-            <label for="switch_near_left">All Bar One</label>
-            <input type="radio" id="switch_near_center" name="switch_near" value="maybe" />
-            <label for="switch_near_center">All Bar One</label>
-            <input type="radio" id="switch_near_right" name="switch_near" value="no" />
-            <label for="switch_near_right">All Bar One</label>
-          </div>
+          
           <div class="switch-submit" align="center">
             <input type="submit" value="Submit">
           </div>
