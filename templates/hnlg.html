@@ -133,11 +133,11 @@
           </div>
           <div class="switch-field">
             <div class="switch-title"><b>Customer Rating</b></div>
-            <input type="radio" id="switch_customer_1" name="switch_rating" value="one" checked/>
+            <input type="radio" id="switch_customer_1" name="switch_rating" value="1_out_of_5" checked/>
             <label for="switch_customer_1">1 out of 5</label>
-            <input type="radio" id="switch_customer_2" name="switch_rating" value="three" />
+            <input type="radio" id="switch_customer_2" name="switch_rating" value="3_out_of_5" />
             <label for="switch_customer_2">3 out of 5</label>
-            <input type="radio" id="switch_customer_3" name="switch_rating" value="five" />
+            <input type="radio" id="switch_customer_3" name="switch_rating" value="5_out_of_5" />
             <label for="switch_customer_3">5 out of 5</label>
             <input type="radio" id="switch_customer_4" name="switch_rating" value="average" />
             <label for="switch_customer_4">Average</label>
@@ -293,12 +293,18 @@
           </div>
           <div class="switch-field">
             <div class="switch-title"><b>Price Range</b></div>
-            <input type="radio" id="switch_pricerange_left" name="switch_pricerange" value="yes" checked/>
-            <label for="switch_pricerange_left">High</label>
-            <input type="radio" id="switch_pricerange_center" name="switch_pricerange" value="no" />
-            <label for="switch_pricerange_center">Moderate</label>
-            <input type="radio" id="switch_pricerange_right" name="switch_pricerange" value="no" />
-            <label for="switch_pricerange_right">Cheap</label>
+            <input type="radio" id="switch_pricerange_1" name="switch_pricerange" value="cheap" checked/>
+            <label for="switch_pricerange_1">Cheap</label>
+            <input type="radio" id="switch_pricerange_2" name="switch_pricerange" value="high" />
+            <label for="switch_pricerange_2">High</label>
+            <input type="radio" id="switch_pricerange_3" name="switch_pricerange" value="less_than_20" />
+            <label for="switch_pricerange_3">less than £20</label>
+            <input type="radio" id="switch_pricerange_4" name="switch_pricerange" value="moderate" />
+            <label for="switch_pricerange_4">moderate</label>
+            <input type="radio" id="switch_pricerange_5" name="switch_pricerange" value="more_than_30" />
+            <label for="switch_pricerange_5">more than £30</label>
+            <input type="radio" id="switch_pricerange_6" name="switch_pricerange" value="20_25" />
+            <label for="switch_pricerange_6">£20-25</label>
           </div>
           
           <div class="switch-submit" align="center">
@@ -311,6 +317,9 @@
     <div class="col-sm-9" align="center">
       <div class="row">
         <h3>Generated Sentences</h3>
+        {% for k,v in request.items() %}
+          <b>{{k}}:</b> {{v[0]}}<br>
+        {% endfor %}
         <hr>
         {% for list in resultList %}
         <h4>
