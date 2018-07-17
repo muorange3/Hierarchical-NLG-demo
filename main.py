@@ -30,7 +30,7 @@ def result():
         for i in range(len(example_pairs)):
             same = 1
             for k,v in result.items():
-                if example_pairs[i]['input'][k] in ['','NAMETOKEN','NAME']: continue
+                if example_pairs[i]['input'][k] in ['','NAMETOKEN']: continue
                 if v[0] != example_pairs[i]['input'][k]:
                     same=0
                     break
@@ -39,11 +39,10 @@ def result():
                 resultSent = example_pairs[i]['output_sent']
                 if result['name']!='':
                     resultSent = resultSent.replace('NAMETOKEN', result['name'][0])
-                    resultSent = resultSent.replace('NAME', result['name'][0])
                     for l in resultList:
                         for w in l:
                             for i in range(len(w)):
-                                if w[i] in ['NAMETOKEN', 'NAME']: w[i] = result['name'][0]
+                                if w[i]=='NAMETOKEN': w[i] = result['name'][0]
 
     return render_template('hnlg.html', resultList=resultList, resultSent=resultSent, request=result)
 
