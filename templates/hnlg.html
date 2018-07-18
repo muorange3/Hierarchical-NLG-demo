@@ -362,6 +362,7 @@ $(document).ready(function() {
         {% endfor %}
         </table>
         <hr>
+        <h2><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;VERB</h2>
         {% for list in resultList %}
         <h4>
         {% for j in list %}
@@ -376,7 +377,16 @@ $(document).ready(function() {
           {% endif %}   
         {% endfor %}
         </h4>
-        <h2><span class="glyphicon glyphicon-arrow-down"></span></h2>
+        {% if loop.index==1 %}
+          <h2><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;ADJ and ADV</h2>
+        {% elif loop.index==2 %}
+          <h2><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;NOUN, PRON, PROPN</h2>
+        {% elif loop.index==3 %}
+          <h2><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;OTHERS</h2>
+        {% elif loop.index==4 %}
+          <h2><span class="glyphicon glyphicon-arrow-down"></span></h2>
+        {% endif %}
+
         {% endfor %}
       </div>
       <div class="row">
