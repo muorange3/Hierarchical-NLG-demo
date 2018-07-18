@@ -10,9 +10,7 @@ app = Flask(__name__)
 SAMPLE = True
 
 def clean(d):
-    for k,v in d.items():
-        if v[0]=='none': d[k]=''
-        else: d[k] = v[0]
+    for k,v in d.items(): d[k] = v[0]
     return d
 
 def assign_word_type(word_layer):
@@ -37,9 +35,9 @@ def main():
 def result():
     if request.method == 'POST':
         result = clean(request.form.to_dict(flat=False))       # user request
-        print(result)
-        # r = requests.post("https://140.112.29.227:3000/predict", data=result)
-        # print(r)
+        # print(result)
+        r = requests.post("http://140.112.29.227:3000/predict", data=result)
+        print(r.text, r.status_code)
 
         if SAMPLE:
             resultList = [[],[],[],[]]
