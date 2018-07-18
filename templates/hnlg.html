@@ -362,8 +362,10 @@ $(document).ready(function() {
         {% endfor %}
         </table>
         <hr>
-        <h2><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;VERB</h2>
         {% for list in resultList %}
+        {% if loop.index==1 %}
+        <h2><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;VERB</h2>
+        {% endif %}
         <h4>
         {% for j in list %}
           {% if j[1] == 'n' %}
