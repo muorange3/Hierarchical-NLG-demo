@@ -29,7 +29,7 @@ def assign_word_type(word_layer):
     print(resultList)
     return resultList
 
-with open('out3.json','r') as f: example_pairs = json.load(f)
+with open('out.json','r') as f: example_pairs = json.load(f)
 
 @app.route('/')
 def main():
