@@ -106,7 +106,33 @@
     }
   </style>
 </head>
+
+<!-- <script>
+$(document).ready(function() {
+
+  $("#switch-form").submit(function() {
+    $.ajax({
+      type: "POST",
+      url: "http://140.112.29.227:3000/predict",
+      data: $("#switch-form").serialize(),
+      success: function(data)
+      {
+        console.log(data);
+        $("#result").html(data);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }
+    });
+    e.preventDefault();
+  });
+
+});
+</script> -->
+
 <body>
+<!-- <div id="result"></div> -->
+
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav">
@@ -115,16 +141,11 @@
       </div>
       <h2 id="title">Hierarchical NLG</h2>
       <p><a href="http://aclweb.org/anthology/N18-2010">http://aclweb.org/anthology/N18-2010</a></p>
-      <!-- <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#section1">Home</a></li>
-        <li><a href="#section2">Friends</a></li>
-        <li><a href="#section3">Family</a></li>
-        <li><a href="#section3">Photos</a></li>
-      </ul><br> -->
 
       <div class="input-group">
         <!-- <form action="http://140.112.29.227:3000/predict" method="POST"> -->
         <form action="/result" method="POST">
+        <!-- <form id="switch-form"> -->
           <div class="switch-field">
             <div class="switch-title"><b>Area</b></div>
             <input type="radio" id="switch_area_0" name="area" value="" checked/>
@@ -365,11 +386,6 @@
     </div>
   </div>
 </div>
-
-<!-- <footer class="container-fluid" style="height: 8vh; background-color: white">
-  <img src="{{url_for('static', filename='img/logo.png')}}" width="100">
-</footer>
- -->
 </body>
 </html>
 

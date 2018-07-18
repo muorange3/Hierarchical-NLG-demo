@@ -7,7 +7,7 @@ from flask import (
 )
 app = Flask(__name__)
 
-SAMPLE = True
+ONLINE = False
 
 def clean(d):
     for k,v in d.items(): d[k] = v[0]
@@ -25,24 +25,27 @@ def assign_word_type(word_layer):
                 else: resultList[i].append([w,word_type[i]])
     return resultList
 
-with open('out.json','r') as f: example_pairs = json.load(f)
-
 @app.route('/')
 def main():
     return render_template('hnlg.html', request={})
 
 @app.route('/result', methods=['GET', 'POST'])
 def result():
+    resultList = [[],[],[],[]]
+    resultSent = ''
+
     if request.method == 'POST':
         result = clean(request.form.to_dict(flat=False))       # user request
-        # print(result)
-        r = requests.post("http://140.112.29.227:3000/predict", data=result)
-        print(r.text, r.status_code)
-
-        if SAMPLE:
-            resultList = [[],[],[],[]]
-            resultSent = ''
-
+        print(result)
+        
+        if ONLINE:
+            r = requests.post("http://140.112.29.227:3000/predict", data=result)
+            # print(r)
+            data = r.json()
+            for i,d in enumerate(data['results']): resultList[i] = d[0]
+            resultSent = ' '.join(resultList[3])
+        else:        
+            with open('out.json','r') as f: example_pairs = json.load(f)
             for example_pair in example_pairs:
                 same = 1
                 for k,v in result.items():
@@ -53,12 +56,14 @@ def result():
                 if same==1:
                     resultList = example_pair['output']
                     resultSent = example_pair['output_sent']
-                    if result['name']!='':
-                        resultSent = resultSent.replace('NAMETOKEN', result['name'])
-                        for l in resultList:
-                            for i,w in enumerate(l):
-                                if w=='NAMETOKEN': l[i] = result['name']
-        # else: resultList = model_generated_list
+                    break
+
+        if result['name']!='':
+            resultSent = resultSent.replace('NAMETOKEN', result['name'])
+            for l in resultList:
+                for i,w in enumerate(l):
+                    if w=='NAMETOKEN': l[i] = result['name']
+
     return render_template('hnlg.html', resultList=assign_word_type(resultList), resultSent=resultSent, request=result)
 
 if __name__ == '__main__':
