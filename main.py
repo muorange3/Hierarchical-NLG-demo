@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-import json, os, sqlite3
+import json, os, sqlite3, requests
 from flask import (
     Flask, jsonify, render_template, request, send_from_directory, url_for, 
     g, redirect, session,
@@ -11,7 +11,6 @@ SAMPLE = True
 
 def clean(d):
     for k,v in d.items():
-        print(k,v)
         if v[0]=='none': d[k]=''
         else: d[k] = v[0]
     return d
@@ -26,7 +25,6 @@ def assign_word_type(word_layer):
             for w in word_layer[i]:
                 if w in word_layer[i-1]: resultList[i].append(resultList[i-1][word_layer[i-1].index(w)])
                 else: resultList[i].append([w,word_type[i]])
-    print(resultList)
     return resultList
 
 with open('out.json','r') as f: example_pairs = json.load(f)
@@ -40,6 +38,8 @@ def result():
     if request.method == 'POST':
         result = clean(request.form.to_dict(flat=False))       # user request
         print(result)
+        # r = requests.post("https://140.112.29.227:3000/predict", data=result)
+        # print(r)
 
         if SAMPLE:
             resultList = [[],[],[],[]]
@@ -51,7 +51,6 @@ def result():
                     if example_pair['input'][k] in ['','NAME']: continue
                     if v != example_pair['input'][k]:
                         same=0
-                        print(k,v,example_pair['input'])
                         break
                 if same==1:
                     resultList = example_pair['output']
