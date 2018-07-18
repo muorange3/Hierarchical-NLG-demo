@@ -42,13 +42,8 @@ def result():
         print(result)
 
         if SAMPLE:
-            resultList = [          # example
-                ['All Bar One','place','it','Midsummer House'],
-                ['All Bar One','is''priced','place','it','is','called','Midsummer House'],
-                ['All Bar One','is','moderately','priced','Italian','place','it','is','called','Midsummer House'],
-                ['Near','All Bar One','is','a','moderately','priced','Italian','place','it','is','called','Midsummer House']
-            ]
-            resultSent = 'Near All Bar One is a moderately priced Italian place it is called Midsummer House'
+            resultList = [[],[],[],[]]
+            resultSent = ''
 
             for example_pair in example_pairs:
                 same = 1
